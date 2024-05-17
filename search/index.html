@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
   
-  <title>search - Hexo</title>
+  <title>搜索 - Hexo</title>
   
     <link rel="shortcut icon" href="/theme-img/blogging%20icon.png">
   
@@ -16,7 +16,7 @@
   
   
   
-  <meta property="og:title" content="search - Hexo" />
+  <meta property="og:title" content="搜索 - Hexo" />
   
   <meta property="og:type" content="website" />
   
@@ -72,6 +72,14 @@
   
   
   
+<link rel="stylesheet" href="/css/archive.css">
+
+  
+  
+  
+<link rel="stylesheet" href="/css/search.css">
+
+  
   
   
 
@@ -91,6 +99,8 @@
         data-toc="true"
         data-toc-max-depth="2"
         
+        
+        data-search-path="search.json"
         
     >
         <nav id="theme-nav">
@@ -144,48 +154,17 @@
     </div>
 </nav>
         
-<article class="post">
+    <div class="container">
     <div class="meta">
-        
-
-        
-        <div class="date" id="date">
-            <span>May</span>
-            <span>17,</span>
-            <span>2024</span>
-        </div>
-        
-
-        <h1 class="title">search</h1>
+        <h2 class="title">
+            搜索
+        </h2>
     </div>
-
-    <div class="divider"></div>
-
-    <div class="content">
-        <p>type: search</p>
-
-    </div>
-
-    
-    <div class="about">
-        <h1>关于本文</h1>
-        <div class="details">
-            <p>由 John Doe 撰写, 采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc/4.0">CC BY-NC 4.0</a> 许可协议.</p>
-        </div>
-        
-    </div>
-    
-
-    <div class="container post-prev-next">
-        <a class="next"></a>
-        <a class="prev"></a>
-    </div>
-
-    
-        
-        
-    
-</article>
+    <form id="search-form">
+        <input type="text" id="searchbox" placeholder="键入以搜索...">
+    </form>
+    <div class="post-list archives" id="search-results"></div>
+</div>
 
         <footer>
     <div class="inner">
@@ -272,6 +251,10 @@
 
         
 <script src="/js/main.js"></script>
+
+        
+        
+<script src="/js/search.js"></script>
 
         
         
