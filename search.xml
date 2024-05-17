@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>西瓜书/南瓜书 第一二章概览笔记</title>
+      <link href="/2024/05/15/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E5%8D%97%E7%93%9C%E4%B9%A6-%E7%AC%AC%E4%B8%80%E4%BA%8C%E7%AB%A0%E6%A6%82%E8%A7%88%E7%AC%94%E8%AE%B0/"/>
+      <url>/2024/05/15/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E5%8D%97%E7%93%9C%E4%B9%A6-%E7%AC%AC%E4%B8%80%E4%BA%8C%E7%AB%A0%E6%A6%82%E8%A7%88%E7%AC%94%E8%AE%B0/</url>
+      
+        <content type="html"><![CDATA[<h1 id="西瓜书-南瓜书"><a href="#西瓜书-南瓜书" class="headerlink" title="西瓜书&amp;南瓜书"></a>西瓜书&amp;南瓜书</h1><h2 id="第一、二章概览笔记"><a href="#第一、二章概览笔记" class="headerlink" title="第一、二章概览笔记"></a>第一、二章概览笔记</h2><h4 id="至2-3-2"><a href="#至2-3-2" class="headerlink" title="至2.3.2"></a>至2.3.2</h4><p>一个sample示例&#x3D;许多（attribute属性+attribute value属性值）&#x3D;一个feature vector特征向量，大量sample组合起来就是data set数据集，譬如我在用的gigaword，样本的维数dimensionality就是属性的个数。</p><p>监督学习：<strong>分类</strong>classification和<strong>回归</strong>regression的区别在于，分类预测离散值，回归预测连续值。</p><p>无监督学习：聚类，把数据集分为若干簇，以了解内在规律</p><p>泛化能力generalization：模型适用于新样本的能力，归纳</p><p>特化能力specialization：演绎deduction</p><p>概念学习是狭义的归纳学习，很难实现，广义的归纳学习大多产生“黑箱”模型。归纳偏好可看作算法自身在假设空间中对假设进行选择的启发式或价值观。</p><p>”奥卡姆剃刀“：多个假设与观察一致时则选最简单的那个。</p><p>No Free Lunch Theorem（NFL定理）：训练集外误差值与算法无关。比较片面，没有考虑特殊情况下的模型适用性。</p><p>过拟合overfitting：过于把训练样本的自身特点学好导师的泛化能力下降。NP问题无法避免，因此只能缓解。</p><p>欠拟合underfitting：可以在决策树学习中扩展分支、在神网中增加训练轮数等</p><h5 id="评估方法："><a href="#评估方法：" class="headerlink" title="评估方法："></a>评估方法：</h5><p>新建测试集testing set。</p><p>留出法：二分（3:1左右）数据集D作为训练集和测试集，注意分层采样以避免引入额外偏差。</p><p>交叉验证法：k分数据集D，用k-1个子集训练后剩下的一个子集测试，重复k次。</p><p>自助法bootstrapping：有放回随机采样m次，即自助采样训练集，从未被采样到的数据作为测试集（约$ \frac {1}{3} $)</p><h5 id="性能度量："><a href="#性能度量：" class="headerlink" title="性能度量："></a>性能度量：</h5><p>错误率、精度、查准率、召回率（查全率）。</p><p>查准率-查全率曲线“P-R曲线”，平衡点（BEP）查准率&#x3D;查全率。</p><p>F1度量：$ F1&#x3D;\frac{2\times P\times R}{P+R}$,一般形式$ F_\beta&#x3D;\frac{(1+\beta^2)\times P\times R}{(\beta^2\times P{}+R)}$</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>文章链接</title>
+      <link href="/2024/05/15/%E6%96%87%E7%AB%A0%E9%93%BE%E6%8E%A5/"/>
+      <url>/2024/05/15/%E6%96%87%E7%AB%A0%E9%93%BE%E6%8E%A5/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2024/05/15/hello-world/"/>
+      <url>/2024/05/15/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
+</search>
