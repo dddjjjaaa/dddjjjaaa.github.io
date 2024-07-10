@@ -96,7 +96,7 @@
 	            <a href="#s1">分类</a>
 	                    <ul class="submenu">
 	                        <li>
-	                        
+	                        <a class="category-link" href="/categories/notes/">notes</a>
 	                    </ul>
 	        </li>
 	        
@@ -152,23 +152,22 @@
 
         <div id="main" >
             <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
-                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >Hello World</h2></a>
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >西瓜书-南瓜书-第四章精读笔记</h2></a>
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+                <h1 id="西瓜书-南瓜书"><a href="#西瓜书-南瓜书" class="headerlink" title="西瓜书&amp;南瓜书"></a>西瓜书&amp;南瓜书</h1><h3 id="第四章决策树-笔记"><a href="#第四章决策树-笔记" class="headerlink" title="第四章决策树 笔记"></a>第四章决策树 笔记</h3><p>划分选择时决策树学习的关键。</p>
+<p>“信息熵“是度量样本集合纯度最常用的一种指标，假定当前样本集合D中第k类样本所占的比例为$p_k$(k&#x3D;1,2,…,|y|),则D的信息熵定义为$Ent(D)&#x3D;-\sum_{k&#x3D;1}^{|y|}p_k log_2p_k$​。可见Ent(D)的值越小D的纯度越高，最小值为0，最大值为$log_2|\gamma|$。</p>
+<p>“信息增益”$Gain(D,a)&#x3D;Ent(D)-\sum^{V}_{v&#x3D;1}\frac{|D^v|}{|D|}Ent(D^v)$    一般而言信息增益越大意味着使用属性a来进行划分的“纯度提升”越大。</p>
+<p>C4.5决策树算法使用“增益率”来选择最优划分属性，$Gain_ratio(D,a)&#x3D;\frac{Gain(D,a)}{IV(a)}$，其中$IV(a)&#x3D;-\sum^{V}_{v&#x3D;1}\frac{|D^v|}{|D|}log_2\frac{|D^v|}{|D|}$称为属性a的“固有值”。</p>
+<p>CART决策树使用“基尼指数”来选择划分属性，$Gini(D)&#x3D;\sum^{|\gamma|}<em>{k&#x3D;1}\sum</em>{k’\neq k}p_kp_{k’}&#x3D;1-\sum^{|\gamma|}_{k&#x3D;1}p_k^2$ 直观来说反映了随机抽取两个样本器类别不一致的概率。因此Gini越小数据集的纯度越高。</p>
+<p>剪枝pruning是决策树学习算法对付“过拟合”的主要手段。分为预剪枝和后剪枝。预剪枝是在划分前就对每个结点进行估计，后剪枝是先从训练集生成一颗完整的决策树，然后再自底向上地对非叶结点进行判断，若该节点对应的子树替换为叶结点能带来决策树泛化性能提升，则将该子树替换为叶结点。</p>
+<p>连续值处理可以找到t划分点，然后就能像对待离散值一样考察这些划分点的Gain值了。</p>
+<p>数据值缺失时如何处理？引入</p>
+<p>$\rho&#x3D;\frac{\sum_{x\in\bar D}w_x}{\sum_{x\in D}w_x}$</p>
+<p>$\bar p_k&#x3D;\frac{\sum_{x\in\bar D_k}w_x}{\sum_{x\in D}w_x}(1\leq k \leq|\gamma|)$</p>
+<p>$\bar r_v&#x3D;\frac{\sum_{x\in\bar D_v}w_x}{\sum_{x\in D}w_x}(1\leq v \leq V)$推广信息增益对待计算式。</p>
+<p>多变量决策树能实现“斜划分”，非叶结点不再是仅对某个属性，而是对属性的线性组合进行测试。</p>
 
             </div>
 
@@ -231,8 +230,8 @@ $('.btn_click_load').click(function() {
 -->
 <script type="text/javascript">
     var disqus_config = function () {
-        this.page.url = 'http://dddjjjaaa.gihub.io/2024/07/10/hello-world/';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'http://dddjjjaaa.gihub.io/2024/07/10/hello-world/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = 'http://dddjjjaaa.gihub.io/2024/05/28/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E5%8D%97%E7%93%9C%E4%B9%A6-%E7%AC%AC%E5%9B%9B%E7%AB%A0%E7%B2%BE%E8%AF%BB%E7%AC%94%E8%AE%B0/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://dddjjjaaa.gihub.io/2024/05/28/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E5%8D%97%E7%93%9C%E4%B9%A6-%E7%AC%AC%E5%9B%9B%E7%AB%A0%E7%B2%BE%E8%AF%BB%E7%AC%94%E8%AE%B0/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 </script>
 
