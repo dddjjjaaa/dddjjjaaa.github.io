@@ -152,22 +152,27 @@
 
         <div id="main" >
             <div class ="post_page_title_img" style="height: 25rem;background-image: url(https://github.com/dddjjjaaa/dddjjjaaa.github.io/blob/master/images/西瓜书.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
-                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >西瓜书-南瓜书-第四章精读笔记</h2></a>
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >西瓜书-南瓜书-第一二章概览笔记</h2></a>
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <h1 id="西瓜书-南瓜书"><a href="#西瓜书-南瓜书" class="headerlink" title="西瓜书&amp;南瓜书"></a>西瓜书&amp;南瓜书</h1><h3 id="第四章决策树-笔记"><a href="#第四章决策树-笔记" class="headerlink" title="第四章决策树 笔记"></a>第四章决策树 笔记</h3><p>划分选择时决策树学习的关键。</p>
-<p>“信息熵“是度量样本集合纯度最常用的一种指标，假定当前样本集合D中第k类样本所占的比例为$p_k$(k&#x3D;1,2,…,|y|),则D的信息熵定义为$Ent(D)&#x3D;-\sum_{k&#x3D;1}^{|y|}p_k log_2p_k$​。可见Ent(D)的值越小D的纯度越高，最小值为0，最大值为$log_2|\gamma|$。</p>
-<p>“信息增益”$Gain(D,a)&#x3D;Ent(D)-\sum^{V}_{v&#x3D;1}\frac{|D^v|}{|D|}Ent(D^v)$    一般而言信息增益越大意味着使用属性a来进行划分的“纯度提升”越大。</p>
-<p>C4.5决策树算法使用“增益率”来选择最优划分属性，$Gain_ratio(D,a)&#x3D;\frac{Gain(D,a)}{IV(a)}$，其中$IV(a)&#x3D;-\sum^{V}_{v&#x3D;1}\frac{|D^v|}{|D|}log_2\frac{|D^v|}{|D|}$称为属性a的“固有值”。</p>
-<p>CART决策树使用“基尼指数”来选择划分属性，$Gini(D)&#x3D;\sum^{|\gamma|}<em>{k&#x3D;1}\sum</em>{k’\neq k}p_kp_{k’}&#x3D;1-\sum^{|\gamma|}_{k&#x3D;1}p_k^2$ 直观来说反映了随机抽取两个样本器类别不一致的概率。因此Gini越小数据集的纯度越高。</p>
-<p>剪枝pruning是决策树学习算法对付“过拟合”的主要手段。分为预剪枝和后剪枝。预剪枝是在划分前就对每个结点进行估计，后剪枝是先从训练集生成一颗完整的决策树，然后再自底向上地对非叶结点进行判断，若该节点对应的子树替换为叶结点能带来决策树泛化性能提升，则将该子树替换为叶结点。</p>
-<p>连续值处理可以找到t划分点，然后就能像对待离散值一样考察这些划分点的Gain值了。</p>
-<p>数据值缺失时如何处理？引入</p>
-<p>$\rho&#x3D;\frac{\sum_{x\in\bar D}w_x}{\sum_{x\in D}w_x}$</p>
-<p>$\bar p_k&#x3D;\frac{\sum_{x\in\bar D_k}w_x}{\sum_{x\in D}w_x}(1\leq k \leq|\gamma|)$</p>
-<p>$\bar r_v&#x3D;\frac{\sum_{x\in\bar D_v}w_x}{\sum_{x\in D}w_x}(1\leq v \leq V)$推广信息增益对待计算式。</p>
-<p>多变量决策树能实现“斜划分”，非叶结点不再是仅对某个属性，而是对属性的线性组合进行测试。</p>
+                <h1 id="西瓜书-南瓜书"><a href="#西瓜书-南瓜书" class="headerlink" title="西瓜书&amp;南瓜书"></a>西瓜书&amp;南瓜书</h1><h2 id="第一、二章概览笔记"><a href="#第一、二章概览笔记" class="headerlink" title="第一、二章概览笔记"></a>第一、二章概览笔记</h2><h4 id="至2-3-2"><a href="#至2-3-2" class="headerlink" title="至2.3.2"></a>至2.3.2</h4><p>一个sample示例&#x3D;许多（attribute属性+attribute value属性值）&#x3D;一个feature vector特征向量，大量sample组合起来就是data set数据集，譬如我在用的gigaword，样本的维数dimensionality就是属性的个数。</p>
+<p>监督学习：<strong>分类</strong>classification和<strong>回归</strong>regression的区别在于，分类预测离散值，回归预测连续值。</p>
+<p>无监督学习：聚类，把数据集分为若干簇，以了解内在规律</p>
+<p>泛化能力generalization：模型适用于新样本的能力，归纳</p>
+<p>特化能力specialization：演绎deduction</p>
+<p>概念学习是狭义的归纳学习，很难实现，广义的归纳学习大多产生“黑箱”模型。归纳偏好可看作算法自身在假设空间中对假设进行选择的启发式或价值观。</p>
+<p>”奥卡姆剃刀“：多个假设与观察一致时则选最简单的那个。</p>
+<p>No Free Lunch Theorem（NFL定理）：训练集外误差值与算法无关。比较片面，没有考虑特殊情况下的模型适用性。</p>
+<p>过拟合overfitting：过于把训练样本的自身特点学好导师的泛化能力下降。NP问题无法避免，因此只能缓解。</p>
+<p>欠拟合underfitting：可以在决策树学习中扩展分支、在神网中增加训练轮数等</p>
+<h5 id="评估方法："><a href="#评估方法：" class="headerlink" title="评估方法："></a>评估方法：</h5><p>新建测试集testing set。</p>
+<p>留出法：二分（3:1左右）数据集D作为训练集和测试集，注意分层采样以避免引入额外偏差。</p>
+<p>交叉验证法：k分数据集D，用k-1个子集训练后剩下的一个子集测试，重复k次。</p>
+<p>自助法bootstrapping：有放回随机采样m次，即自助采样训练集，从未被采样到的数据作为测试集（约$ \frac {1}{3} $)</p>
+<h5 id="性能度量："><a href="#性能度量：" class="headerlink" title="性能度量："></a>性能度量：</h5><p>错误率、精度、查准率、召回率（查全率）。</p>
+<p>查准率-查全率曲线“P-R曲线”，平衡点（BEP）查准率&#x3D;查全率。</p>
+<p>F1度量：$ F1&#x3D;\frac{2\times P\times R}{P+R}$,一般形式$ F_\beta&#x3D;\frac{(1+\beta^2)\times P\times R}{(\beta^2\times P{}+R)}$</p>
 
             </div>
 
@@ -230,8 +235,8 @@ $('.btn_click_load').click(function() {
 -->
 <script type="text/javascript">
     var disqus_config = function () {
-        this.page.url = 'http://dddjjjaaa.gihub.io/2024/05/28/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E5%8D%97%E7%93%9C%E4%B9%A6-%E7%AC%AC%E5%9B%9B%E7%AB%A0%E7%B2%BE%E8%AF%BB%E7%AC%94%E8%AE%B0/';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'http://dddjjjaaa.gihub.io/2024/05/28/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E5%8D%97%E7%93%9C%E4%B9%A6-%E7%AC%AC%E5%9B%9B%E7%AB%A0%E7%B2%BE%E8%AF%BB%E7%AC%94%E8%AE%B0/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = 'http://dddjjjaaa.gihub.io/2024/05/15/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E5%8D%97%E7%93%9C%E4%B9%A6-%E7%AC%AC%E4%B8%80%E4%BA%8C%E7%AB%A0%E6%A6%82%E8%A7%88%E7%AC%94%E8%AE%B0/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://dddjjjaaa.gihub.io/2024/05/15/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E5%8D%97%E7%93%9C%E4%B9%A6-%E7%AC%AC%E4%B8%80%E4%BA%8C%E7%AB%A0%E6%A6%82%E8%A7%88%E7%AC%94%E8%AE%B0/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 </script>
 
